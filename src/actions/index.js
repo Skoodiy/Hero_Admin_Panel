@@ -40,6 +40,13 @@ export const filtersFatchingError = () => {
     }
 }
 
+export const activeFilterChanged = (filter) => {
+    return {
+        type: 'ACTIVE_FILTER_CHANGED',
+        payload: filter
+    }
+}
+
 // Heroes adding and deleting
 
 

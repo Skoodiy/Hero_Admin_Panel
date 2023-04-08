@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
 import { useHttp } from '../../hooks/http.hook';
-import { heroAdded, filtersFetching, filtersFetched, filtersFatchingError } from '../../actions';
+import { heroAdded } from '../../actions';
 
 // Задача для этого компонента:
 // Реализовать создание нового героя с введенными данными. Он должен попадать
@@ -19,17 +19,9 @@ const HeroesAddForm = () => {
     const [heroDescr, setheroDescr] = useState("");
     const [heroElem, setHeroElem] = useState("");
 
-    const filters = useSelector(state => state.filters);
+    const {filters, filtersLoadingStatus} = useSelector(state => state);
     const dispatch = useDispatch();
     const {request} = useHttp();
-
-    useEffect(() => {
-        dispatch(filtersFetching());
-        request('http://localhost:3001/filters')
-            .then(data => dispatch(filtersFetched(data)))
-            .catch(() => dispatch(filtersFatchingError()))
-        // eslint-disable-next-line
-    }, [])
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -55,6 +47,25 @@ const HeroesAddForm = () => {
         setheroDescr('');
         setHeroElem('');
     };
+
+    const renderFilters = (filters, filterStatus) => {
+        if (filterStatus === 'loading') {
+            return <option>загрузка элементов</option>
+        } else if (filterStatus === 'error') {
+            return <option>Ошибка загрузки</option>
+        }
+
+        if (filters && filters.length > 0) {
+            
+            return filters.map(({name, label}) => {
+                // eslint-disable-next-line
+                if (name === 'all') return;
+                
+                return <option key={name} value={name}>{label}</option>
+            })
+        }
+
+    }
 
     return (
         <form className="border p-4 shadow-lg rounded">
@@ -103,10 +114,7 @@ const HeroesAddForm = () => {
                     name="element"
                 >
                     <option>Я владею элементом...</option>
-                    <option value="fire">Огонь</option>
-                    <option value="water">Вода</option>
-                    <option value="wind">Ветер</option>
-                    <option value="earth">Земля</option>
+                    {renderFilters(filters, filtersLoadingStatus)}
                 </select>
             </div>
 

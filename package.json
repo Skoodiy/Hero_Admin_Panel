@@ -14,7 +14,6 @@
     "react-redux": "^7.2.3",
     "react-scripts": "4.0.3",
     "sass": "^1.43.2",
-    "classnames": "^2.3.1",
     "uuid": "^8.3.2"
   },
   "scripts": {
@@ -39,6 +38,6 @@
     ]
   },
   "devDependencies": {
-    "classnames": "^2.3.1"
+    "classnames": "^2.3.2"
   }
 }
