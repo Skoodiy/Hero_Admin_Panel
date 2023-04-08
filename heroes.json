@@ -1,0 +1,41 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "id": 2,
+      "name": "Неизвестный герой",
+      "description": "Скрывающийся в тени",
+      "element": "wind"
+    },
+    {
+      "id": "14c74144-b3bd-470e-8909-0cd191766fd3",
+      "name": "Kill_Doza",
+      "description": "12312312312312",
+      "element": "wind"
+    },
+    {
+      "id": "544df59b-a1f1-434a-a5ca-345d58474e0f",
+      "name": "Героиныч",
+      "description": "Полный попуск",
+      "element": "earth"
+    },
+    {
+      "id": "48c47ed2-e51e-4388-af22-725188e262c4",
+      "name": "Kill_Doza",
+      "description": "111",
+      "element": "fire"
+    }
+  ],
+  "filters": [
+    "all",
+    "fire",
+    "water",
+    "wind",
+    "earth"
+  ]
+}
