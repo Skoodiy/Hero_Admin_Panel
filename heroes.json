@@ -23,6 +23,12 @@
       "name": "Саня",
       "description": "Красиво жить",
       "element": "earth"
+    },
+    {
+      "id": "898bb609-923c-403e-aed1-34cf6b73fa61",
+      "name": "Пит",
+      "description": "Выбери меня",
+      "element": "wind"
     }
   ],
   "filters": [
