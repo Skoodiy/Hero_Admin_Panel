@@ -35,6 +35,12 @@
       "name": "Айван",
       "description": "Извнстнейший употреблятель",
       "element": "fire"
+    },
+    {
+      "id": "d7a464a1-94af-4d20-95e6-2c897b7b4a48",
+      "name": "wert",
+      "description": "Qwert",
+      "element": "wind"
     }
   ],
   "filters": [
