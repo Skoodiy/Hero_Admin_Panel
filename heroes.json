@@ -29,6 +29,12 @@
       "name": "Пит",
       "description": "Выбери меня",
       "element": "wind"
+    },
+    {
+      "id": "24e77a96-5f69-4708-a819-8c5c41a21f9d",
+      "name": "Айван",
+      "description": "Извнстнейший употреблятель",
+      "element": "fire"
     }
   ],
   "filters": [
